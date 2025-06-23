@@ -11,9 +11,7 @@ public class MetodosRecursivos {
 		return result;
 	}
 
-	public static void main(String[] args) {
-		calcularFatorial(7);
-	}
+	
 	public static void calcularFatorial(int n) {
 		if (n == 0) {
 			System.out.println(n + "! = " + calculaFatorialRecursivo(n));
@@ -31,17 +29,28 @@ public class MetodosRecursivos {
 		return fat;
 	}
 
-	public int calcularFibonacci(int n) {
+	public static void main(String[] args) {
+		calculaFibonacci(12);
+	}
+	
+	public static void calculaFibonacci(int n) {
+		if (n == 1) {
+			System.out.print(calcularFibonacciRecursivo(n) + " ");
+		} else {
+			calculaFibonacci(n-1);
+			System.out.print(calcularFibonacciRecursivo(n) + " ");
+		}
+	}
+
+	public static int calcularFibonacciRecursivo(int n) {
 		int result = 1;
-		// TODO ESCREVA AQUI O CÓDIGO (USANDO RECURSAO) PARA CALCULAR E IMPRIMIR
-		// O N-ESIMO TERMO
-		// DA SEQUENCIA DE FIBONACCI, QUE TEM A SEGUINTE LEI DE FORMACAO: O
-		// PRIMEIRO E SEGUNDO NUMEROS
-		// DA SEQUENCIA SÃO 1. A PARTIR DO TERCEIRO TERMO, CADA TERMO DA
-		// SEQUENCIA É DADO
-		// PELA SOMA DOS OUTROS DOIS ANTERIORES. OBSERVE QUE SENDO O METODO
-		// RECURSIVO, O FIBONACCI DOS NUMEROS ANTERIORES TAMBEM VAO SER
-		// IMPRESSOS
+		if (n == 2) {
+			result = 1;
+		} else if (n == 1) {
+			result = 1;
+		} else {
+			result = calcularFibonacciRecursivo(n-1) + calcularFibonacciRecursivo(n - 2);
+		}
 		return result;
 	}
 
