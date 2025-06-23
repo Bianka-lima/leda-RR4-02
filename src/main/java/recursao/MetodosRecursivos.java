@@ -2,20 +2,33 @@ package recursao;
 
 public class MetodosRecursivos {
 
+	
+
 	public int calcularSomaArray(int[] array){
 		int result = 0;
 		// TODO ESCREVA AQUI O CÓDIGO (USANDO RECURSAO) PARA CALCULAR A SOMA
 		// DOS EMENTOS DE UM ARRAY
 		return result;
 	}
-	public long calcularFatorial(int n) {
-		long result = 1;
-		// TODO ESCREVA AQUI O CÓDIGO (USANDO RECURSAO) PARA CALCULAR E IMPRIMIR
-		// O FATORIAL DO PARAMETRO
-		// DE ACORDO COM O QUE FOI MOSTRADO NO EXERCCICIO. OBSERVE QUE SENDO O
-		// METODO
-		// RECURSIVO, O FATORIAL DOS NUMEROS ANTERIORES TAMBEM VAO SER IMPRESSOS
-		return result;
+
+	public static void main(String[] args) {
+		calcularFatorial(7);
+	}
+	public static void calcularFatorial(int n) {
+		if (n == 0) {
+			System.out.println(n + "! = " + calculaFatorialRecursivo(n));
+		} else {
+			calcularFatorial(n-1);
+			System.out.println(n + "! = " + n * calculaFatorialRecursivo(n-1));
+		}
+	}
+	public static long calculaFatorialRecursivo(int n) {
+		long fat;
+		if (n == 0) {
+			fat = 1;
+		} else
+			fat = n * calculaFatorialRecursivo(n-1);
+		return fat;
 	}
 
 	public int calcularFibonacci(int n) {
